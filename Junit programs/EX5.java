@@ -1,23 +1,10 @@
 import java.util.Scanner;
 
-public class EX5 {
+public class PalindromeChecker {
 
     public static boolean isPalindrome(String str) {
-        // Removing spaces and converting to lowercase for case-insensitive comparison
         str = str.replaceAll("\\s+", "").toLowerCase();
-
-        int left = 0;
-        int right = str.length() - 1;
-
-        while (left < right) {
-            if (str.charAt(left) != str.charAt(right)) {
-                return false;
-            }
-            left++;
-            right--;
-        }
-
-        return true;
+        return str.equals(new StringBuilder(str).reverse().toString());
     }
 
     public static void main(String[] args) {
@@ -26,11 +13,7 @@ public class EX5 {
         System.out.print("Enter a string: ");
         String input = scanner.nextLine();
 
-        if (isPalindrome(input)) {
-            System.out.println("The string is a palindrome.");
-        } else {
-            System.out.println("The string is not a palindrome.");
-        }
+        System.out.println(isPalindrome(input) ? "The string is a palindrome." : "The string is not a palindrome.");
 
         scanner.close();
     }
