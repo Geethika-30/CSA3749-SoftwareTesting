@@ -1,20 +1,25 @@
-public class EX8{
+import java.util.Scanner;
+
+public class EX8 {
 
     public static void main(String[] args) {
-        int n = 5; // Replace 5 with the desired number for testing
-        long factorial = calculateFactorial(n);
-        System.out.println("Factorial of " + n + " is: " + factorial);
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a non-negative integer: ");
+        int n = scanner.nextInt();
+
+        if (n < 0) {
+            System.out.println("Input must be a non-negative integer.");
+        } else {
+            long factorial = calculateFactorial(n);
+            System.out.println("Factorial of " + n + " is: " + factorial);
+        }
+
+        scanner.close();
     }
 
     // Function to calculate factorial of a number
     public static long calculateFactorial(int n) {
-        if (n < 0) {
-            throw new IllegalArgumentException("Input must be a non-negative integer");
-        }
-        if (n == 0 || n == 1) {
-            return 1;
-        } else {
-            return n * calculateFactorial(n - 1);
-        }
+        return (n == 0 || n == 1) ? 1 : n * calculateFactorial(n - 1);
     }
 }
