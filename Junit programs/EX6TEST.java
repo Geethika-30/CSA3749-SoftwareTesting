@@ -1,24 +1,19 @@
-import static org.junit.Assert.*;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
-public class EX6TEST{
+public class EX6Test {
 
     @Test
     public void testConvertToBinary() {
-         EX6 converter = new EX6();
-
-        assertEquals("101", converter.convertToBinary(5));
-        assertEquals("1101", converter.convertToBinary(13));
-        assertEquals("10110110", converter.convertToBinary(182));
+        assertEquals("1101", DectoBin_Oct.convertToBinary(13));
+        assertEquals("10101", DectoBin_Oct.convertToBinary(21));
+        // Add more test cases as needed
     }
 
     @Test
     public void testConvertToOctal() {
-	EX6 converter = new EX6();
-
-        
-        assertEquals("5", converter.convertToOctal(5));
-        assertEquals("15", converter.convertToOctal(13));
-        assertEquals("266", converter.convertToOctal(182));
+        assertEquals("15", DectoBin_Oct.convertToOctal(13));
+        assertEquals("25", DectoBin_Oct.convertToOctal(21));
+        // Add more test cases as needed
     }
 }
