@@ -1,19 +1,14 @@
-import static org.junit.Assert.*;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
-public class EX4TEST {
+public class EX4Test {
 
     @Test
     public void testCalculateSimpleInterest() {
-        double principal = 1000;
-        double rate = 5;
-        double time = 2;
+        // Test for a regular customer
+        assertEquals(1000.0, SimpleInterestCalculator.calculateSimpleInterest(10000.0, 0.10, 1.0), 0.001);
 
-        double expectedInterest = 100.0; // Expected simple interest is 100
-
-        double calculatedInterest = EX4.calculateSimpleInterest(principal, rate, time);
-
-        // Using JUnit's assertEquals for double comparison
-        assertEquals(expectedInterest, calculatedInterest, 0.001); // 0.001 is the delta for precision
+        // Test for a senior citizen
+        assertEquals(1200.0, SimpleInterestCalculator.calculateSimpleInterest(10000.0, 0.12, 1.0), 0.001);
     }
 }
