@@ -1,15 +1,11 @@
+import java.util.Scanner;
 public class EX6{
-
-    public String convertToBinary(int decimalNumber) {
-        return Integer.toBinaryString(decimalNumber);
-    }
-
-    public String convertToOctal(int decimalNumber) {
-        return Integer.toOctalString(decimalNumber);
-}
-public static void main(String[] args)
-{
-
-
-    }
+ public static void main(String[] args) {
+ Scanner in = new Scanner(System.in);
+ int Decimal = in.nextInt();
+ String Binary = Integer.toBinaryString(Decimal);
+ System.out.println("BINARY IS " + Binary);
+ System.out.print("OCTAL IS ");
+ System.out.println(Integer.toOctalString(Decimal));
+ }
 }
