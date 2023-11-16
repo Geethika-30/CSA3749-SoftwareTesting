@@ -1,15 +1,20 @@
 public class EX8{
 
-    public int calculateFactorial(int n) {
+    public static void main(String[] args) {
+        int n = 5; // Replace 5 with the desired number for testing
+        long factorial = calculateFactorial(n);
+        System.out.println("Factorial of " + n + " is: " + factorial);
+    }
+
+    // Function to calculate factorial of a number
+    public static long calculateFactorial(int n) {
         if (n < 0) {
-            throw new IllegalArgumentException("Input must be non-negative");
+            throw new IllegalArgumentException("Input must be a non-negative integer");
         }
-
-        int factorial = 1;
-        for (int i = 1; i <= n; i++) {
-            factorial *= i;
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+            return n * calculateFactorial(n - 1);
         }
-
-        return factorial;
     }
 }
