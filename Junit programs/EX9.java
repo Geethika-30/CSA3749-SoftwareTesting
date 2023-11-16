@@ -1,13 +1,14 @@
 public class EX9 {
+
     public static void main(String[] args) {
-        // You can still use this main method for manual testing if needed.
-        // However, the primary testing will be done using JUnit test cases.
-isLeapYear(2021);
+        int year = 2024; // Replace 2024 with the desired year for testing
+        boolean isLeap = isLeapYear(year);
+
+        System.out.println(year + (isLeap ? " is" : " is not") + " a leap year.");
     }
 
+    // Function to check if a year is a leap year
     public static boolean isLeapYear(int year) {
-	if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
-	{System.out.print("true");}
         return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
 }
