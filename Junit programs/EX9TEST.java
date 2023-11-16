@@ -1,13 +1,15 @@
-import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
-public class EX9TEST {
+public class LeapYearCheckerTest {
 
     @Test
-    public void testLeapYear() {
-        assertTrue(EX9.isLeapYear(2020));  // 2020 is a leap year
-        assertTrue(EX9.isLeapYear(2000));  // 2000 is a leap year
-        assertFalse(EX9.isLeapYear(1900)); // 1900 is not a leap year
-        assertFalse(EX9.isLeapYear(2021)); // 2021 is not a leap year
+    public void testIsLeapYear() {
+        assertTrue(LeapYearChecker.isLeapYear(2000)); // Divisible by 4, 100, and 400
+        assertTrue(LeapYearChecker.isLeapYear(2024)); // Divisible by 4, not by 100 but by 400
+        assertFalse(LeapYearChecker.isLeapYear(1900)); // Divisible by 4 and 100, not by 400
+        assertFalse(LeapYearChecker.isLeapYear(2022)); // Not divisible by 4
+
+        // Add more test cases as needed
     }
 }
