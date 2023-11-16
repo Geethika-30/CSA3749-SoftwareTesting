@@ -1,23 +1,17 @@
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
-public class EX10TEST {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+
+public class EX10TEST{
 
     @Test
-    public void testCalculateSquare() {
-        double input = 3.0;
-        double expectedResult = 9.0;
-        double delta = 0.0001;
-
-        double result = EX10.calculateSquare(input);
-
-        assertEquals(expectedResult, result, delta);
+    public void testCalculatePower() {
+        assertEquals(4.0, SquareCubeCalculator.calculatePower(2.0, 2), 0.001);
+        assertEquals(25.0, SquareCubeCalculator.calculatePower(-5.0, 2), 0.001);
+        assertEquals(8.0, SquareCubeCalculator.calculatePower(2.0, 3), 0.001);
+        assertEquals(-125.0, SquareCubeCalculator.calculatePower(-5.0, 3), 0.001);
+        // Add more test cases as needed
     }
-
-    @Test
-    public void testCalculateCube() {
-        double input = 2.0;
-        double expectedResult = 8.0;
-        double delta = 0.0001;
+}
 
         double result = EX10.calculateCube(input);
 
